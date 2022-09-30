@@ -5,6 +5,7 @@ m = 3, n = 4.
 5 -2 33 -2
 77 3 8 1 
 */
+
 void Print(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
@@ -14,16 +15,17 @@ void Print(int[,] arr)
             Console.Write(arr[i, j] + " ");
         }
         Console.WriteLine();
-
     }
 }
 int m = 3, n = 4;
+
 int[,] mass = new int[m, n];
+Console.WriteLine(mass.GetLength(0));
+Console.WriteLine(mass.GetLength(1));
 for (int i = 0; i < mass.GetLength(0); i++)
 {
     for (int j = 0; j < mass.GetLength(1); j++)
     {
-        //Console.Write(i + "-" + j + ",");
         mass[i, j] = new Random().Next(0, 10);
     }
     Console.WriteLine();
