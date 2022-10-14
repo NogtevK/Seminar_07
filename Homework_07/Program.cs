@@ -39,6 +39,7 @@ Console.WriteLine(); */
 8 4 2 4
 17 -> такого числа в массиве нет 
 */
+/* 
 void Print(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
@@ -73,7 +74,7 @@ else
     object c = mass.GetValue(a,b);
     Console.Write(c);
 }
-
+ */
 
 //////////////////////////////////////////////////////////////////////////////////////
 /* Задача 52: Задайте двумерный массив из целых чисел.
@@ -86,3 +87,37 @@ else
 Среднее арифметическое каждого
 столбца: 4,6; 5,6; 3,6; 3. 
 */
+void Print(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write(arr[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+int m = 3, n = 4;
+int[,] mass = new int[m, n];
+
+for (int i = 0; i < mass.GetLength(0); i++)
+{
+    for (int j = 0; j < mass.GetLength(1); j++)
+    {
+        mass[i, j] = new Random().Next(0, 10);
+    }
+}
+Print(mass);
+Console.WriteLine();
+
+for (int j = 0; j < mass.GetLength(1); j++)
+{
+    double sum = 0;
+    for (int i = 0; i < mass.GetLength(0); i++)
+    {
+        sum += mass[i, j];
+    }
+    Console.Write(Math.Round(sum / mass.GetLength(0), 2) + " ");
+}
+Console.WriteLine();
