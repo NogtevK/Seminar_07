@@ -45,7 +45,7 @@ void Print(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write(arr[i, j] + "/t");
+            Console.Write(arr[i, j] + " ");
         }
         Console.WriteLine();
     }
@@ -57,12 +57,22 @@ for (int i = 0; i < mass.GetLength(0); i++)
 {
     for (int j = 0; j < mass.GetLength(1); j++)
     {
-        mass[m, n] = new Random().Next(0, 10);
+        mass[i, j] = new Random().Next(0, 10);
     }
 }
 Print(mass);
-
-
+Console.WriteLine();
+Console.WriteLine("Введите координату A для проверки в массиве");
+int a = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите координату B для проверки в массиве");
+int b = int.Parse(Console.ReadLine());
+if (a > m && b > n)
+    Console.WriteLine($"{a}{b}-> такого числа в масиве нет");
+else
+{
+    object c = mass.GetValue(a,b);
+    Console.Write(c);
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////
